@@ -1,22 +1,21 @@
 import java.util.Scanner;
 
-public class InputData {
+class InputData {
 
-    public static Point[] inputData(){
+    static Point[] inputData(){
         int count = 0;
 
         Scanner scanner = new Scanner(System.in);
-        Point[] points = new Point[3];
+        System.out.println("Podaj ilość punktów");
+        int numberOfPoint = scanner.nextInt();
+        Point[] points = new Point[numberOfPoint];
 
         do {
-
             points[count] = new Point();
-
             System.out.println("Podaj współrzędne "+ count +" punktu: ");
             points[count].setCoordinateX(scanner.nextInt());
             points[count].setCoordinateY(scanner.nextInt());
             count++;
-
         }while (count < points.length);
         return points;
     }

@@ -1,8 +1,8 @@
-public class Point {
+class Point {
     private double coordinateX = 0;
     private double CoordinateY = 0;
 
-    public Point(){
+    Point(){
 
     }
 
