@@ -2,21 +2,22 @@ import java.util.Scanner;
 
 public class InputData {
 
-    public static void inputData(){
+    public static Point[] inputData(){
+        int count = 0;
 
         Scanner scanner = new Scanner(System.in);
+        Point[] points = new Point[3];
 
-        Point point = new Point();
-        Point point1 = new Point();
+        do {
 
-        System.out.println("Podaj współrzędne pierwszego punktu: ");
-        point.setCoordinateX(scanner.nextInt());
-        point.setCoordinateY(scanner.nextInt());
+            points[count] = new Point();
 
-        System.out.println("Podaj współrzędne drugiego punktu");
-        point1.setCoordinateX(scanner.nextInt());
-        point1.setCoordinateY(scanner.nextInt());
+            System.out.println("Podaj współrzędne "+ count +" punktu: ");
+            points[count].setCoordinateX(scanner.nextInt());
+            points[count].setCoordinateY(scanner.nextInt());
+            count++;
 
-        DistanceCalculate.distanceCalculate(point, point1);
+        }while (count < points.length);
+        return points;
     }
 }
